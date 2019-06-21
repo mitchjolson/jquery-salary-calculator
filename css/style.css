@@ -6,3 +6,16 @@ header{
     font-size: 2em;
     padding: 15px;
 }
+
+h3{
+    padding-top: 15px;
+    padding-left: 5px;
+}
+
+#inputFields{
+    margin: 5px;
+}
+
+#submitButton{
+    margin: 5px;
+}

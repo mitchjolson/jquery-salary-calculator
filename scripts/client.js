@@ -5,6 +5,7 @@ let totalSalary = 0;
 
 function onReady(){
     $('#submitButton').on('click', submit);
+    $('#employeesOut').on('click', '.deleteButton', deleteEmployee);
 }
 
 function submit(){
@@ -20,15 +21,27 @@ function submit(){
     showSalaryTotal(newEmployee.salary);
 }
 
+function deleteEmployee(){
+  console.log('deleteEmployee button clicked');
+
+}
+
 function showEmployee(){
     let el = $( '#employeesOut' );
     el.empty();
     for( let i=0; i < employees.length; i++ ){
-        el.append( 
-            `<li>
-                ${employees[i].firstName} ${employees[i].lastName} ${employees[i].idNumber} 
-                ${employees[i].jobTitle} $${employees[i].salary} 
-            </li>`
+        el.append(`
+            <tr><td>${employees[i].firstName}</td>
+            <td>${employees[i].lastName}</td>
+            <td>${employees[i].idNumber}</td>
+            <td>${employees[i].jobTitle}</td>
+            <td>$${employees[i].salary}</td>
+            <td><button class="deleteButton">Delete</button></td></tr>
+            `
+//            `<li>
+//                ${employees[i].firstName} ${employees[i].lastName} ${employees[i].idNumber}
+//                ${employees[i].jobTitle} $${employees[i].salary}
+//            </li>`
         );
     }
 }
@@ -39,9 +52,16 @@ function showSalaryTotal( salary ){
     let totalMonthly = Math.round(totalSalary / 12 * 100) / 100;
     console.log('adding ', salary, ', total salary is now: ', totalSalary );
     let el = $('#totalSalaryOut');
-    el.empty();
-    el.append( `Total Monthly: $${totalMonthly} `);
-    checkMonthly(totalMonthly);
+    if( totalMonthly >= 20000 ){
+      el.empty();
+      el.append( `<h3 id="redTotal">Total Monthly Salary: $${totalMonthly}</h3> `);
+      checkMonthly(totalMonthly);
+    }
+    else{
+      el.empty();
+      el.append( `<h3>Total Monthly Salary: $${totalMonthly}</h3`);
+      checkMonthly(totalMonthly);
+    }
 }
 
 function checkMonthly(total){

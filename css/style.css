@@ -20,3 +20,7 @@ h3{
 #submitButton{
     margin: 5px;
 }
+
+#redTotal{
+  background-color: red;
+}

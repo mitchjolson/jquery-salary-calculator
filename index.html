@@ -19,10 +19,33 @@
         <input type="text" placeholder="ID Number" id="idNumberIn">
         <input type="text" placeholder="Job Title" id="jobTitleIn">
         <input type="text" placeholder="Salary" id="salaryIn">
-    </section>
         <button id="submitButton">Submit</button>
+    </section>
     <h3>Employees</h3>
-    <ul id="employeesOut"></ul>
-    <h3 id="totalSalaryOut">Total Monthly : </h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">ID</th>
+          <th scope="col">Title</th>
+          <th scope="col">Salary</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="employeesOut">
+        <tr>
+          <td>Tobias</th>
+          <td>Funke</td>
+          <td>123456</td>
+          <td>Actor</td>
+          <td>0</td>
+        </tr>
+  </tbody>
+</table>
+    <!--<ul id="employeesOut"></ul> -->
+    <section id="totalSalaryOut">
+      <h3>Total Monthly Salary : </h3>
+    </section>
 </body>
 </html>

@@ -22,15 +22,21 @@ function submit(){
 }
 
 function deleteEmployee(){
-  console.log('deleteEmployee button clicked');
 // The function needs to target the <td> containing the ID number and assign it to a new variable.
 // Then run a loop in the array to find any objects with that ID number, and splice them from the array.
 // After that, we run any functions necessary to update the DOM with the new array.
 //  $(this).parent().parent().remove();
 //  $(this).parent().previousElementSibling().remove();
-  console.log( $(this).parent().parent().children('td.tdID') );
+  console.log( 'deleting employee with ID#',$(this).parent().parent().children('td.tdID')[0].innerHTML );
   let xID = $(this).parent().parent().children('td.tdID')[0].innerHTML;
-  console.log(xID);
+  for(let i=0; i < employees.length; i++){
+    if( xID === employees[i].idNumber ){
+      employees.splice( i, 1 );
+      showEmployee();
+      showSalaryTotal();
+      i -= 1;
+    }
+  }
 }
 
 function showEmployee(){

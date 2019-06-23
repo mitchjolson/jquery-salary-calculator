@@ -31,7 +31,7 @@ function submit(){
 // it also runs the showEmployee function again with the modified array
 function deleteEmployee(){
     console.log( 'deleting employee with ID#',$(this).parent().parent().children('td.tdID')[0].innerHTML );
-    let xID = $(this).parent().parent().children('td.tdID')[0].innerHTML;
+    let xID = $(this).parent().parent().children('td.tdID')[0].innerHTML; // There's probably an easier way to do this?
     for(let i=0; i < employees.length; i++){
       if( xID === employees[i].idNumber ){
         let xSalary = 0 - employees[i].salary;

@@ -52,25 +52,16 @@ function showSalaryTotal( salary ){
     let totalMonthly = Math.round(totalSalary / 12 * 100) / 100;
     console.log('adding ', salary, ', total salary is now: ', totalSalary );
     let el = $('#totalSalaryOut');
-    if( totalMonthly >= 20000 ){
+    if( totalMonthly > 20000 ){
       el.empty();
       el.append( `<h3 id="redTotal">Total Monthly Salary: $${totalMonthly}</h3> `);
-      checkMonthly(totalMonthly);
     }
     else{
       el.empty();
       el.append( `<h3>Total Monthly Salary: $${totalMonthly}</h3`);
-      checkMonthly(totalMonthly);
     }
 }
 
-function checkMonthly(total){
-    if( total > 20000 ){
-        console.log('We be payin\' too much money.')
-    }
-}
 
-// Need to do a red background when total monthly is > 12000
-// Need to add a remove button for each element I add
-// Style better, use a grid with bootstrap?
+// Add comments to code
 // Stretch goals?

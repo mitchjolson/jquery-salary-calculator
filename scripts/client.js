@@ -22,18 +22,15 @@ function submit(){
 }
 
 function deleteEmployee(){
-// The function needs to target the <td> containing the ID number and assign it to a new variable.
-// Then run a loop in the array to find any objects with that ID number, and splice them from the array.
-// After that, we run any functions necessary to update the DOM with the new array.
-//  $(this).parent().parent().remove();
-//  $(this).parent().previousElementSibling().remove();
   console.log( 'deleting employee with ID#',$(this).parent().parent().children('td.tdID')[0].innerHTML );
   let xID = $(this).parent().parent().children('td.tdID')[0].innerHTML;
   for(let i=0; i < employees.length; i++){
     if( xID === employees[i].idNumber ){
+      let xSalary = 0 - employees[i].salary;
+      console.log(xSalary);
       employees.splice( i, 1 );
       showEmployee();
-      showSalaryTotal();
+      showSalaryTotal(xSalary);
       i -= 1;
     }
   }
@@ -51,10 +48,6 @@ function showEmployee(){
             <td>$${employees[i].salary}</td>
             <td><button class="deleteButton">Delete</button></td></tr>
             `
-//            `<li>
-//                ${employees[i].firstName} ${employees[i].lastName} ${employees[i].idNumber}
-//                ${employees[i].jobTitle} $${employees[i].salary}
-//            </li>`
         );
     }
 }
@@ -77,4 +70,3 @@ function showSalaryTotal( salary ){
 
 
 // Add comments to code
-// Stretch goals?

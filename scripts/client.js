@@ -23,6 +23,11 @@ function submit(){
     employees.push( newEmployee );
     showEmployee();
     showSalaryTotal(newEmployee.salary);
+    $(`#firstNameIn`).val('');
+    $(`#lastNameIn`).val('');
+    $(`#idNumberIn`).val('');
+    $(`#jobTitleIn`).val('');
+    $(`#salaryIn`).val('');
 }
 
 // function uses jQuery to grab the text of the employee ID in the selected ROW when delete button is clicked

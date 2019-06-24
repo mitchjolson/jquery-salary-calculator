@@ -59,7 +59,7 @@ function showEmployee(){
             <td class="tdID">${employees[i].idNumber}</td>
             <td>${employees[i].jobTitle}</td>
             <td>$${employees[i].salary}</td>
-            <td><button class="deleteButton">Delete</button></td></tr>
+            <td><button class="deleteButton btn-danger">Delete</button></td></tr>
             `
         );
     }
